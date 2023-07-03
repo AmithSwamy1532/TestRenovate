@@ -1,0 +1,5 @@
+{
+  "message-journal-engine.message-journal": "Success.",
+  "message-journal-engine.message-journal-failed-to-load": "Error! Failed to load.",
+  "message-journal-engine.no-message-journal": "Not available."
+}

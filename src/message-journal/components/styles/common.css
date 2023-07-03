@@ -1,0 +1,72 @@
+input,
+textarea {
+    font-size: 0.9rem !important;
+}
+
+input#subject:disabled {
+    font-weight: bold;
+    font-size: 1rem !important;
+}
+
+textarea:disabled {
+    font-family: 'Segoe UI Semibold';
+}
+
+input:disabled#from,
+input:disabled#to {
+    color: #6495ED !important;
+}
+
+input:disabled,
+textarea:disabled {
+    border: none !important;
+    outline: none !important;
+    opacity: 1 !important;
+    background-color: transparent !important;
+}
+
+form>div {
+    margin-bottom: 0.5rem !important;
+}
+
+div[data-test-id="from"],
+div[data-test-id="to"] {
+    position: relative !important;
+    float: left;
+    width: 100% !important;
+}
+
+div[data-test-id="from"]>div,
+div[data-test-id="to"]>div {
+    position: relative;
+    float: left;
+    margin-top: 5px;
+}
+
+div[data-test-id="subject"]:is(input[name="subject"]) {
+    /* display: none; */
+    border: 1px solid red;
+}
+
+div[data-test-id="from"]>input:disabled,
+div[data-test-id="to"]>input:disabled {
+    position: relative;
+    float: left;
+    width: 80%;
+    margin-left: 5%;
+}
+
+
+.alert_container {
+    position: fixed;
+    top: 75px;
+    left: 15%;
+    right: 15%;
+    width: 70%;
+    height: auto;
+    z-index: 10;
+}
+
+.Overlay-module__overlay-container___wBvmx {
+    height: 100%
+}

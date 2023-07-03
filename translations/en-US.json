@@ -1,0 +1,10 @@
+{
+  "message-journal-engine.message-journal": "Success.",
+  "message-journal-engine.message-journal-failed-to-load": "Error! Failed to load.",
+  "message-journal-engine.no-message-journal": "Not available.",
+  "message-journal-engine.compose-message": "Compose Message",
+  "message-journal-engine.compose-reminder": "Compose Reminder",
+  "message-journal-engine.header-title": "Message Journal",
+  "message-journal-engine.inbox-title": "Inbox",
+  "Terra.datePicker.dateFormatLabel": "Today"
+}

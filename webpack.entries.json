@@ -1,0 +1,5 @@
+{
+  "message-journal-js/message-journal": {
+    "dependencies": ["./message-journal-js/lib/message-journal/index"]
+  }
+}

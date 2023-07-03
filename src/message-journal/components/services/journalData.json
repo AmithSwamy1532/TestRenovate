@@ -1,0 +1,91 @@
+{
+  "journal_items": [
+    {
+      "recipients_display": "tes",
+      "subject": "item1",
+      "message": "Rechecking\n",
+      "patient_id": 1,
+      "created_date": "2022-08-12T05:43:28.722Z",
+      "senders_display": "PHY 1",
+      "message_type": "message",
+      "id": 5
+    },
+    {
+      "subject": "Anil compo",
+      "created_date": "2022-08-12T06:28:06.729Z",
+      "senders_display": "PHY 1",
+      "recipients_display": "1234",
+      "message": "Testing the component update.",
+      "message_type": "message",
+      "patient_id": 1,
+      "id": 9
+    },
+    {
+      "recipients_display": "Ahan, Nirmalya",
+      "subject": "Test1",
+      "message": "Hello This is testing for one",
+      "patient_id": 1,
+      "created_date": "2022-08-15T06:58:51.862Z",
+      "senders_display": "PHY 1",
+      "message_type": "message",
+      "id": 10
+    },
+    {
+      "recipients_display": "Testing Heading",
+      "subject": "Test2",
+      "message": "Hello1 this is for testing",
+      "patient_id": 1,
+      "created_date": "2022-08-15T07:05:32.621Z",
+      "senders_display": "PHY 1",
+      "message_type": "reminder",
+      "id": 11
+    },
+    {
+      "recipients_display": "Abcd, Hfgsuh, Rohit",
+      "subject": "Test3",
+      "message": "Hello",
+      "patient_id": 1,
+      "created_date": "2022-08-15T07:06:41.820Z",
+      "senders_display": "PHY 1",
+      "message_type": "reminder",
+      "id": 12
+    },
+    {
+      "recipients_display": "Kanha, Neha, kunal",
+      "subject": "item51",
+      "message": "Hello",
+      "patient_id": 1,
+      "created_date": "2022-08-15T07:09:45.540Z",
+      "senders_display": "PHY 1",
+      "message_type": "reminder",
+      "id": 13
+    },
+    {
+      "subject": "Test12333",
+      "created_date": "2022-08-16T08:20:57.712Z",
+      "senders_display": "PHY 1",
+      "recipients_display": "Ahan, Nirmalya",
+      "message": "Hello this id for reminder 1234",
+      "message_type": "reminder",
+      "patient_id": 1,
+      "id": 14
+    }
+  ],
+  "patients": [
+    {
+      "id": 1,
+      "applicationContent": "Test Content",
+      "age": "40",
+      "dateOfBirth": "May 9, 1992",
+      "gender": "Male",
+      "gestationalAge": "10 Weeks",
+      "identifiers": {
+        "MRN": 12343,
+        "REA": "3JSDA"
+      },
+      "personName": "Patien 1",
+      "postMenstrualAge": "5 Weeks",
+      "preferredFirstName": "P1"
+    }
+  ]
+}

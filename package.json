@@ -1,0 +1,166 @@
+{
+  "name": "message-journal-js",
+  "version": "0.0.0",
+  "description": "Node module to support the rails engine message_journal_engine",
+  "engines": {
+    "node": "^10.13.0 || ^12.0.0 || ^14.0.0"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "lib",
+    "translations",
+    "*.md",
+    "webpack.entries.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.cerner.com/AS075468/message-journal-js.git"
+  },
+  "bugs": {
+    "url": "https://jira2.cerner.com/projects/JIRA_QUEUE"
+  },
+  "keywords": [
+    "Cerner",
+    "message-journal-js"
+  ],
+  "associated_engine": "git://github.cerner.com/AS075468/message_journal_engine.git",
+  "publishConfig": {
+    "registry": "https://cernerrepos.net/api/npm/npm"
+  },
+  "rollOut": {
+    "TODO": "You can customize roll out config if you want. See this for more details: https://pages.github.cerner.com/orion/orion-release-site/tools/orion-release-site/roll-out",
+    "site": {
+      "repositoryId": "cerner-release-main-site",
+      "repositoryUrl": "http://repo.release.cerner.corp/nexus/service/local/repositories/main-site"
+    }
+  },
+  "author": "Cerner Corporation",
+  "eslintConfig": {
+    "extends": "@cerner/terra"
+  },
+  "package-json-lint": {
+    "extends": "@cerner/package-json-lint-config-terra/package-json-lint.config.js",
+    "projectType": "module"
+  },
+  "stylelint": {
+    "extends": "@cerner/stylelint-config-terra"
+  },
+  "scripts": {
+    "build": "npm run compile",
+    "clean": "rimraf ./package-lock.json && rimraf ./node_modules",
+    "clean:install": "npm run clean && npm install",
+    "clean:obsolete-jest-snapshots": "jest -u",
+    "clean:obsolete-wdio-snapshots": "tt-clean-screenshots",
+    "compile": "babel src --out-dir lib --copy-files",
+    "compile:engine": "babel src --out-dir ../message_journal_engine/node_modules/message-journal-js/lib --copy-files",
+    "deploy-gh-pages": "TERRA_DEV_SITE_PUBLIC_PATH='/AS075468/message-journal-js/' npm run pack && gh-pages -d build",
+    "lint": "npm run lint:js && npm run lint:scss && npm run lint:package-json",
+    "lint:js": "eslint --ext .js,.jsx .",
+    "lint:package-json": "terra package-json-lint",
+    "lint:scss": "stylelint src/**/*.scss --allow-empty-input",
+    "pack": "NODE_ENV=production webpack -p",
+    "precompile": "rimraf lib",
+    "prepare": "npm run build",
+    "pretest:jest": "tt-aggregate-translations",
+    "start": "webpack-dev-server",
+    "start-prod": "webpack-dev-server --env.disableHotReloading -p",
+    "start-static": "npm run pack && terra express-server --site ./build",
+    "test": "npm run lint && npm run test:jest && npm run test:wdio",
+    "test:jest": "jest",
+    "test:jest:coverage": "jest --coverage",
+    "test:lint": "npm run lint",
+    "test:wdio": "terra wdio",
+    "test:wdio:local": "terra wdio --gridUrl grid314.test.devcernerpowerchart.com --browsers chrome ie --locales en en-AU en-CA en-GB en-US es fr nl pt sv"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bootstrap": "^5.2.0",
+    "final-form": "^4.20.7",
+    "html-react-parser": "^3.0.1",
+    "json-server": "^0.17.0",
+    "moment-timezone": "^0.5.34",
+    "prop-types": "^15.5.8",
+    "react-axios": "^2.0.6",
+    "react-bootstrap": "^2.4.0",
+    "react-final-form": "^6.5.9",
+    "terra-action-footer": "^2.63.0",
+    "terra-action-header": "^2.74.3",
+    "terra-alert": "^4.60.7",
+    "terra-base": "^5.48.1",
+    "terra-button": "^3.61.0",
+    "terra-button-group": "^3.60.2",
+    "terra-card": "^3.43.0",
+    "terra-cell-grid": "^1.12.0",
+    "terra-collapsible-menu-view": "^6.61.0",
+    "terra-content-container": "^3.0.0",
+    "terra-date-picker": "^4.74.0",
+    "terra-date-time-picker": "^4.76.0",
+    "terra-demographics-banner": "^3.58.2",
+    "terra-disclosure-manager": "^4.42.0",
+    "terra-form-field": "^4.20.5",
+    "terra-form-input": "^4.17.5",
+    "terra-form-textarea": "^5.19.5",
+    "terra-form-validation": "^1.70.0",
+    "terra-heading": "^4.48.1",
+    "terra-html-table": "^1.14.0",
+    "terra-icon": "^3.48.0",
+    "terra-modal-manager": "^6.58.1",
+    "terra-notification-dialog": "^4.23.0",
+    "terra-overlay": "^3.69.5",
+    "terra-popup": "^6.61.0",
+    "terra-slide-panel-manager": "^5.62.0",
+    "terra-spacer": "^3.0.0",
+    "terra-status-view": "^4.0.0",
+    "terra-table": "^4.32.0",
+    "terra-toolbar": "^1.29.0"
+  },
+  "peerDependencies": {
+    "orion-application": "^1.1.0",
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.7.2",
+    "react": "^16.8.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/plugin-transform-object-assign": "^7.2.0",
+    "@babel/plugin-transform-regenerator": "^7.4.5",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "@cerner/browserslist-config-terra": "^3.0.0",
+    "@cerner/eslint-config-terra": "^5.0.0",
+    "@cerner/jest-config-terra": "^1.0.0",
+    "@cerner/package-json-lint": "^1.0.0",
+    "@cerner/package-json-lint-config-terra": "^1.0.0",
+    "@cerner/stylelint-config-terra": "^4.0.0",
+    "@cerner/terra-aggregate-translations": "^2.0.1",
+    "@cerner/terra-cli": "^1.6.0",
+    "@cerner/terra-functional-testing": "^2.1.0",
+    "@cerner/webpack-config-terra": "^1.3.1",
+    "core-js": "^3.1.3",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.2.2",
+    "eslint": "^6.1.0",
+    "gh-pages": "^2.2.0",
+    "jest": "^26.6.3",
+    "moxios": "^0.4.0",
+    "orion-application": "^1.1.0",
+    "orion-dev-site-plugin": "^1.0.0",
+    "orion-toolkit-js": "^4.1.0",
+    "postcss": "^8.2.1",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "regenerator-runtime": "^0.13.2",
+    "rimraf": "^3.0.2",
+    "stylelint": "^13.0.0",
+    "terra-dev-site": "^6.8.0",
+    "terra-enzyme-intl": "^3.0.0",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.3.1",
+    "webpack-merge": "^5.7.3"
+  }
+}
